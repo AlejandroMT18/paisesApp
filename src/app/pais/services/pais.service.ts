@@ -1,7 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable, of } from 'rxjs';
-import { catchError } from 'rxjs/operators';
+import { Observable } from 'rxjs';
 import { Pais } from '../interfaces/respuestaPaisesName.interface';
 
 @Injectable({
@@ -16,6 +15,15 @@ export class PaisService {
   buscarPais( args: string ): Observable<Pais[]> {
     
     const url =  `${ this.apiURL }/name/${ args } `;
+    
+    return this.http.get<Pais[]>( url );
+    
+    
+  }
+
+  buscarCapital( args: string ): Observable<Pais[]> {
+    
+    const url =  `${ this.apiURL }/capital/${ args } `;
     
     return this.http.get<Pais[]>( url );
     

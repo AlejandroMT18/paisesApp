@@ -14,7 +14,8 @@
             <td>
                 <img class="small-flag" [src]="item.flag">
             </td>
-            <td>{{ item.capital }}, {{ item.name }}</td>
+            <td *ngIf = "dif == 1">{{  item.capital }}, {{ item.name }}</td>
+            <td *ngIf = "dif == 0">{{ item.name }}, {{ item.capital }}</td>
             <td>{{ item.population | number }}</td>
             <td>
                 <a [routerLink]="['/pais', item.alpha2Code]" routerLinkActive="router-link-active" href="/pais/cri">Ver...</a>

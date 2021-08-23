@@ -12,6 +12,7 @@ export class PorCapitalComponent  {
   termino: string = '';
   hayError: boolean = false;
   paises: Pais[] = [];
+  dif = 1;
 
   constructor( private paisService: PaisService ) {  }
 
@@ -34,6 +35,5 @@ export class PorCapitalComponent  {
   sugerencias( event: string) {
     if( event.trim() != '') this.buscar(event)
     this.hayError = false;
-    console.log(event);
   }
 }

@@ -1,5 +1,4 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { PorPaisComponent } from '../../pages/por-pais/por-pais.component';
 import { Pais } from '../../interfaces/respuestaPaisesName.interface';
 
 @Component({
@@ -11,6 +10,8 @@ import { Pais } from '../../interfaces/respuestaPaisesName.interface';
 export class PaisTablaComponent{
 
   @Input() paises: Pais[] = []
+  @Input() dif = 0;
+
 
   constructor() { }
 
